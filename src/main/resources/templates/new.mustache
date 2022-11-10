@@ -1,0 +1,9 @@
+{{>layouts/header}}
+<form class="container" action="/articles" method="post">
+    <input type="text" name="title"/>
+    <br>
+    <input type="text" name="content"/>
+    <input type="submit"/>
+</form>
+<a href="/articles/" class="btn btn-primary">Cancel</a>
+{{>layouts/footer}}
