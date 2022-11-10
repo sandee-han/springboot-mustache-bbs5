@@ -76,6 +76,7 @@ public class ArticleController {
         return String.format("redirect:/articles/%d", article.getId());
     }
 
+
     @GetMapping("/{id}/delete")
     public String delete(@PathVariable Long id, Model model) {
         articleRepository.deleteById(id);
