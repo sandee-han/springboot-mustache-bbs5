@@ -3,6 +3,7 @@ package com.mustache.bbs5.domain;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -14,11 +15,13 @@ import javax.persistence.Table;
 public class Hospital {
     @Id // GeneratedValue 안씀
     private Integer id; // Long -> BigInteger
-    private String hospital_name;
-    private String full_address;
+    @Column(name = "hospital_name")
+    private String name;
+    @Column(name="road_name_address")
+    private String address;
 
-    public Hospital(String hospital_name, String full_address) {
-        this.hospital_name = hospital_name;
-        this.full_address = full_address;
+    public Hospital(String name, String address) {
+        this.name = name;
+        this.address = address;
     }
 }

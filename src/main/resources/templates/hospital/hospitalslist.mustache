@@ -3,19 +3,26 @@
     <thead class="thead-light">
     <tr>
         <th scope="col">#</th>
-        <th scope="col">제목</th>
-        <th scope="col">작성자</th>
-        <th scope="col">작성시간</th>
+        <th scope="col">병원 이름</th>
+        <th scope="col">병원 주소(도로명)</th>
     </tr>
     </thead>
-    {{#hospitalsList}}
+    {{#hospitals}}
         <tbody>
         <tr>
             <th scope="row">{{id}}</th>
-            <td>{{hospital_name}}</a></td>
-            <td>{{full_address}}</td>
+            <td>{{name}}</a></td>
+            <td>{{address}}</td>
         </tr>
         </tbody>
-    {{/hospitalsList}}
+    {{/hospitals}}
 </table>
+<ul class="pagination justify-content-center">
+    <li class="page-item">
+        <a class="page-link" href="?page={{previous}}">이전</a>
+    </li>
+    <li class="page-item">
+        <a class="page-link" href="?page={{next}}">다음</a>
+    </li>
+</ul>
 {{>layouts/footer}}

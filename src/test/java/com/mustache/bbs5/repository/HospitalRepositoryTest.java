@@ -21,7 +21,7 @@ class HospitalRepositoryTest {
         Hospital hp = hospital.get();
         System.out.println(hp.getId());
         assertEquals(1, hp.getId());
-        assertEquals("효치과의원", hp.getHospital_name());
-        assertEquals("광주광역시 북구 풍향동 565번지 4호 3층", hp.getFull_address());
+        assertEquals("효치과의원", hp.getName());
+        assertEquals("광주광역시 북구 풍향동 565번지 4호 3층", hp.getAddress());
     }
 }
