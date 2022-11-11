@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
@@ -46,6 +47,19 @@ public class ArticleController {
         }
     }
 
+    @Transactional
+    public List<Article> search(String keyword) {
+        List<Article> articleList = articleRepository.findByTitleContaining(keyword);
+        return articleList;
+    }
+
+    @GetMapping("/search")
+    public String search(String keyword, Model model) {
+        List<Article> searchList = search(keyword);
+        model.addAttribute("searchList", searchList);
+        return "list";
+    }
+
     @GetMapping("/list")
     public String list(Model model) {
         List<Article> articleList = articleRepository.findAll();
@@ -76,11 +90,12 @@ public class ArticleController {
         return String.format("redirect:/articles/%d", article.getId());
     }
 
-
     @GetMapping("/{id}/delete")
     public String delete(@PathVariable Long id, Model model) {
         articleRepository.deleteById(id);
         return "redirect:/articles/list";
     }
+
+
 
 }
