@@ -72,7 +72,7 @@ class HospitalRepositoryTest {
     @Test
     @DisplayName("병상 수가 10개 이상, 20개 미만인 병원")
     void findByNumbersOfBedsBetween() {
-        List<Hospital> hospitals = hospitalRepository.findByBedsBetween(10, 20);
+        List<Hospital> hospitals = hospitalRepository.findByBedsBetween(10, 19);
         for (var hospital :
                 hospitals) {
             System.out.printf("%s: %d\n", hospital.getName(), hospital.getBeds());

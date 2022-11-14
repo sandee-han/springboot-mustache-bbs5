@@ -8,3 +8,8 @@ SELECT business_type_name, hospital_name, road_name_address
 FROM bbs.nation_wide_hospitals
 where business_type_name in ('보건소', '보건지소');
 
+
+-- 병상 10개 이상 20개 미만
+SELECT hospital_name, patient_room_count FROM bbs.nation_wide_hospitals
+where patient_room_count between 10 and 19
+order by patient_room_count desc;
