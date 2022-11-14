@@ -7,3 +7,4 @@ where road_name_address like "경기도 수원시%"
 SELECT business_type_name, hospital_name, road_name_address
 FROM bbs.nation_wide_hospitals
 where business_type_name in ('보건소', '보건지소');
+

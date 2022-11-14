@@ -20,8 +20,11 @@ public class Hospital {
     @Column(name="road_name_address")
     private String address;
 
+    private String businessTypeName;
+
     public Hospital(String name, String address) {
         this.name = name;
         this.address = address;
+
     }
 }
