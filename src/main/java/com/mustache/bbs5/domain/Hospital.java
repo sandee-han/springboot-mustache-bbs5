@@ -17,10 +17,13 @@ public class Hospital {
     private Integer id; // Long -> BigInteger
     @Column(name = "hospital_name")
     private String name;
-    @Column(name="road_name_address")
+    @Column(name = "road_name_address")
     private String address;
 
     private String businessTypeName;
+
+    @Column(name = "total_number_of_beds")
+    private int beds;
 
     public Hospital(String name, String address) {
         this.name = name;

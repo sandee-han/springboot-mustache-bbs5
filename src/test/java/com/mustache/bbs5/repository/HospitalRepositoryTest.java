@@ -53,4 +53,30 @@ class HospitalRepositoryTest {
         }
     }
 
+    @Test
+    @DisplayName("광진구 + 보건소, 보건지소, 보건진료소를 갖는 병원들 출력")
+    void findByAddressAndTypeName() {
+        List<String> inClues = new ArrayList<>();
+        inClues.add("보건소");
+        inClues.add("보건지소");
+        inClues.add("보건진료소");
+
+        List<Hospital> hospitals = hospitalRepository.findByBusinessTypeNameIn(inClues);
+        hospitals = hospitalRepository.findByAddressIsContaining("광진구");
+        for (var hospital :
+                hospitals) {
+            System.out.println(hospital.getName());
+        }
+    }
+
+    @Test
+    @DisplayName("병상 수가 10개 이상, 20개 미만인 병원")
+    void findByNumbersOfBedsBetween() {
+        List<Hospital> hospitals = hospitalRepository.findByBedsBetween(10, 20);
+        for (var hospital :
+                hospitals) {
+            System.out.printf("%s: %d\n", hospital.getName(), hospital.getBeds());
+        }
+    }
+
 }
