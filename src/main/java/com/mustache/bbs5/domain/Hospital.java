@@ -29,8 +29,9 @@ public class Hospital {
 
     private String businessTypeName;
     private Float totalAreaSize;
+    private Integer businessStatusCode;
 
-
+    // HospitalEntity를 HospitalResponse Dto로 만들어주는 부분
     public static HospitalResponse of(Hospital hospital) {
         return new HospitalResponse(hospital.getId(), hospital.getAddress(), hospital.getName(),
                                     hospital.getPatientRoomCount(), hospital.getBeds(),
