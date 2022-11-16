@@ -1,6 +1,8 @@
 package com.mustache.bbs5.service;
 
 import com.mustache.bbs5.domain.Article;
+import com.mustache.bbs5.domain.dto.ArticleAddRequest;
+import com.mustache.bbs5.domain.dto.ArticleAddResponse;
 import com.mustache.bbs5.domain.dto.ArticleResponse;
 import com.mustache.bbs5.repository.ArticleRepository;
 import org.springframework.stereotype.Service;
@@ -20,5 +22,11 @@ public class ArticleService {
         Article article = optionalArticle.get();
         ArticleResponse articleResponse = Article.of(article);
         return articleResponse;
+    }
+
+    public ArticleAddResponse add(ArticleAddRequest dto) {
+        Article article = dto.toEntity();
+        Article savedArticle = articleRepository.save(article);
+        return new ArticleAddResponse(savedArticle.getId(), savedArticle.getTitle(), savedArticle.getContent());
     }
 }

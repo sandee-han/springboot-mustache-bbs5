@@ -3,6 +3,7 @@ package com.mustache.bbs5.domain;
 import com.mustache.bbs5.domain.dto.ArticleResponse;
 import com.mustache.bbs5.domain.dto.HospitalResponse;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -13,6 +14,7 @@ import javax.persistence.*;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class Article {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
