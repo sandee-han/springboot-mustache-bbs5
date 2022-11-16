@@ -1,5 +1,7 @@
 package com.mustache.bbs5.domain;
 
+import com.mustache.bbs5.domain.dto.ArticleResponse;
+import com.mustache.bbs5.domain.dto.HospitalResponse;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -23,5 +25,10 @@ public class Article {
         this.title = title;
         this.content = content;
         this.author = author;
+    }
+
+    // HospitalEntity를 HospitalResponse Dto로 만들어주는 부분
+    public static ArticleResponse of(Article article) {
+        return new ArticleResponse(article.getId(), article.getTitle(), article.getContent());
     }
 }
