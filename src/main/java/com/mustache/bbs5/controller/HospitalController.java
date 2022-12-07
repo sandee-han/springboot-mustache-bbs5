@@ -13,6 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -27,8 +28,9 @@ public class HospitalController {
     }
 
     @GetMapping("/")
-    public String list(Model model, @PageableDefault(size = 10, sort = "id", direction = Sort.Direction.ASC) Pageable pageable) {
-        Page<Hospital> hospitals = hospitalRepository.findAll(pageable);
+    public String list(@RequestParam String keyword, Model model, @PageableDefault(size = 10, sort = "id", direction = Sort.Direction.ASC) Pageable pageable) {
+        log.info("keyword:{}", keyword);
+        Page<Hospital> hospitals = hospitalRepository.findByAddressContaining(keyword, pageable);
         model.addAttribute("hospitals", getHospitalList(pageable));
         model.addAttribute("previous", pageable.previousOrFirst().getPageNumber());
         model.addAttribute("next", pageable.next().getPageNumber());

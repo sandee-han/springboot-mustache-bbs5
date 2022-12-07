@@ -39,17 +39,21 @@ class ArticleRestControllerTest {
     @Test
     @DisplayName("json형태로 response가 잘 옵니까?? 예??")
     void articleJsonResponse() throws Exception {
-        ArticleResponse articleResponse = ArticleResponse.builder()
-                .id(1L)
-                .title("test")
-                .content("test content").build();
-
-        given(articleService.getArticle(1L)).willReturn(articleResponse);
-
         Long articleId = 1L;
+        ArticleResponse articleResponse = ArticleResponse.builder()
+                .id(articleId)
+                .title("test")
+                .content("test content?").build();
+
+        given(articleService.getArticle(articleId)).willReturn(articleResponse);
+
+
         String url = String.format("/api/v1/articles/%d", articleId);
-        mockMvc.perform(get(url)).andExpect(status().isOk()).andExpect(jsonPath("$.title").exists())
+        mockMvc.perform(get(url))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.title").exists())
                 .andExpect(jsonPath("$.title").value("test"))
+                .andExpect(jsonPath("$.content").value("test content?"))
                 .andDo(print());
 
         verify(articleService).getArticle(articleId);

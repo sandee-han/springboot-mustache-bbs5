@@ -29,4 +29,5 @@ public class ArticleService {
         Article savedArticle = articleRepository.save(article);
         return new ArticleAddResponse(savedArticle.getId(), savedArticle.getTitle(), savedArticle.getContent());
     }
+
 }

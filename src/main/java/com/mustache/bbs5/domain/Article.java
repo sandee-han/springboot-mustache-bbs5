@@ -29,8 +29,9 @@ public class Article {
         this.author = author;
     }
 
-    // HospitalEntity를 HospitalResponse Dto로 만들어주는 부분
+    // ArticleEntity를 ArticleResponse Dto로 만들어주는 부분
     public static ArticleResponse of(Article article) {
         return new ArticleResponse(article.getId(), article.getTitle(), article.getContent());
     }
+
 }

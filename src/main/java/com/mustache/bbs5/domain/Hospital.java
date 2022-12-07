@@ -1,6 +1,8 @@
 package com.mustache.bbs5.domain;
 
 import com.mustache.bbs5.domain.dto.HospitalResponse;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -12,6 +14,9 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "nation_wide_hospitals") // hospital이라는 table이 아님
 @Getter
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class Hospital {
     @Id // GeneratedValue 안씀
     private Integer id; // Long -> BigInteger
