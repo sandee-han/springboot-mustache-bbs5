@@ -1,0 +1,33 @@
+{{>layouts/header}}
+<form action="/hospitals" method="get">
+    지역: <input type="text" name="keyword" />
+    <input type="submit" />
+</form>
+
+<table class="table">
+    <thead class="thead-light">
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">병원 이름</th>
+        <th scope="col">병원 주소(도로명)</th>
+    </tr>
+    </thead>
+    {{#hospitals}}
+        <tbody>
+        <tr>
+            <th scope="row">{{id}}</th>
+            <td>{{name}}</a></td>
+            <td>{{address}}</td>
+        </tr>
+        </tbody>
+    {{/hospitals}}
+</table>
+<ul class="pagination justify-content-center">
+    <li class="page-item">
+        <a class="page-link" href="?page={{previous}}">이전</a>
+    </li>
+    <li class="page-item">
+        <a class="page-link" href="?page={{next}}">다음</a>
+    </li>
+</ul>
+{{>layouts/footer}}
