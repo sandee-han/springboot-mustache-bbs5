@@ -1,0 +1,27 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/bbs
+    username: root
+    password: runwild
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+server:
+  servlet:
+    encoding:
+      force-response: true
+
+jwt:
+  secret: this.is.secret
+
+logging:
+  level:
+    root: INFO
