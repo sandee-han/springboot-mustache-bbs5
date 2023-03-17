@@ -19,7 +19,7 @@ import javax.persistence.Table;
 @NoArgsConstructor
 public class Hospital {
     @Id // GeneratedValue 안씀
-    private Integer id; // Long -> BigInteger
+    private Long id; // Long -> BigInteger
 
     @Column(name = "hospital_name")
     private String name;

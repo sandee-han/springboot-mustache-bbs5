@@ -23,7 +23,7 @@ public class HospitalRestController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<HospitalResponse> get(@PathVariable Integer id) { // ResponseEntity도 DTO타입
+    public ResponseEntity<HospitalResponse> get(@PathVariable Long id) { // ResponseEntity도 DTO타입
         HospitalResponse hospitalResponse = hospitalService.getHospital(id); // DTO
         return ResponseEntity.ok().body(hospitalResponse); // Return은 DTO로
     }

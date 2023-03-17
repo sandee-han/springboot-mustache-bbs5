@@ -30,7 +30,7 @@ class HospitalRestControllerTest {
     @DisplayName("Json형태로 Response가 잘 오는지") // 비즈니스로직 Controller만 검증 (Service를 점증하지 않음)
     void jsonResponse() throws Exception {
         HospitalResponse hospitalResponse = HospitalResponse.builder()
-                                        .id(2321)
+                                        .id(2321l)
                                         .address("서울특별시 서초구 서초중앙로 230, 202호 (반포동, 동화반포프라자빌딩)")
                                         .name("노소아청소년과의원")
                                         .patientRoomCount(0)
@@ -40,9 +40,9 @@ class HospitalRestControllerTest {
                                         .businessStatusName("영업중")
                                         .build();
 
-        given(hospitalService.getHospital(2321)).willReturn(hospitalResponse);
+        given(hospitalService.getHospital(2321l)).willReturn(hospitalResponse);
 
-        int hospitalId = 2321;
+        Long hospitalId = 2321l;
 
         // 앞에서 Autowired한 mockMvc
         String url = String.format("/api/v1/hospitals/%d", hospitalId);

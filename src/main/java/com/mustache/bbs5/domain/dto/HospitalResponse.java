@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class HospitalResponse {
-    private Integer id;
+    private Long id;
     private String address;
     private String name;
     private Integer patientRoomCount;
@@ -18,7 +18,7 @@ public class HospitalResponse {
     private String businessTypeName;
     private Float totalAreaSize;
 
-    public HospitalResponse(Integer id, String address, String name, Integer patientRoomCount, Integer beds, String businessTypeName, Float totalAreaSize) {
+    public HospitalResponse(Long id, String address, String name, Integer patientRoomCount, Integer beds, String businessTypeName, Float totalAreaSize) {
         this.id = id;
         this.address = address;
         this.name = name;

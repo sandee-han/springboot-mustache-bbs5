@@ -20,7 +20,7 @@ class HospitalRepositoryTest {
 
     @Test
     void name() {
-        Optional<Hospital> hospital = hospitalRepository.findById(1);
+        Optional<Hospital> hospital = hospitalRepository.findById(1l);
         Hospital hp = hospital.get();
         System.out.println(hp.getId());
         assertEquals(1, hp.getId());

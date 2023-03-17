@@ -27,25 +27,25 @@ class HospitalServiceTest {
     @DisplayName("")
     void getHospitalTest() {
         Hospital hospital1 = Hospital.builder()
-                .id(4)
+                .id(4l)
                 .businessStatusCode(13)
                 .build();
 
         Hospital hospital2 = Hospital.builder()
-                .id(41)
+                .id(41l)
                 .businessStatusCode(3)
                 .build();
 
         Mockito.when(hospitalRepository.findById(any()))
                 .thenReturn(Optional.of(hospital1));
 
-        HospitalResponse hospitalResponse1 = hospitalService.getHospital(4);
+        HospitalResponse hospitalResponse1 = hospitalService.getHospital(4l);
         assertEquals("영업중", hospitalResponse1.getBusinessStatusName());
 
         Mockito.when(hospitalRepository.findById(any()))
                 .thenReturn(Optional.of(hospital2));
 
-        HospitalResponse hospitalResponse2 = hospitalService.getHospital(41);
+        HospitalResponse hospitalResponse2 = hospitalService.getHospital(41l);
         assertEquals("폐업", hospitalResponse2.getBusinessStatusName());
     }
 
