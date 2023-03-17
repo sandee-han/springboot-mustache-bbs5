@@ -5,6 +5,9 @@ server:
       force-response: true
       charset: UTF-8
 
+jwt:
+  secret:
+
 spring:
   mvc:
     pathmatch:
