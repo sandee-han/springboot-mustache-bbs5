@@ -12,7 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "nation_wide_hospitals") // hospital이라는 table이 아님
+@Table(name = "t_nation_wide_hospitals")
 @Getter
 @Builder
 @AllArgsConstructor
