@@ -1,6 +1,6 @@
 package com.mustache.bbs5.domain.dto;
 
-import com.mustache.bbs5.domain.Article;
+import com.mustache.bbs5.domain.entity.Article;
 import lombok.Getter;
 
 @Getter

@@ -1,7 +1,5 @@
 package com.mustache.bbs5.controller;
 
-import com.mustache.bbs5.domain.Visit;
-import com.mustache.bbs5.domain.dto.Response;
 import com.mustache.bbs5.domain.dto.VisitRequest;
 import com.mustache.bbs5.service.VisitService;
 import lombok.RequiredArgsConstructor;

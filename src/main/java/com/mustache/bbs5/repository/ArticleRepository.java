@@ -1,6 +1,6 @@
 package com.mustache.bbs5.repository;
 
-import com.mustache.bbs5.domain.Article;
+import com.mustache.bbs5.domain.entity.Article;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

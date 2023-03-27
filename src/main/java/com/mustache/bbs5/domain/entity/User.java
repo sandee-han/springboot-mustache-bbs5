@@ -1,4 +1,4 @@
-package com.mustache.bbs5.domain;
+package com.mustache.bbs5.domain.entity;
 
 import lombok.*;
 
@@ -19,5 +19,8 @@ public class User {
     private String userName;
     private String password;
     private String emailAddress;
+
+    @Enumerated(EnumType.STRING)
+    private UserRole role;
 
 }

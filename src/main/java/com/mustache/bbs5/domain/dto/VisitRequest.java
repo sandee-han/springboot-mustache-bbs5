@@ -1,8 +1,8 @@
 package com.mustache.bbs5.domain.dto;
 
-import com.mustache.bbs5.domain.Hospital;
-import com.mustache.bbs5.domain.User;
-import com.mustache.bbs5.domain.Visit;
+import com.mustache.bbs5.domain.entity.Hospital;
+import com.mustache.bbs5.domain.entity.User;
+import com.mustache.bbs5.domain.entity.Visit;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
