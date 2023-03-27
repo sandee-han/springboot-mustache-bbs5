@@ -1,6 +1,6 @@
 package com.mustache.bbs5.domain.dto;
 
-import com.mustache.bbs5.domain.User;
+import com.mustache.bbs5.domain.entity.User;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

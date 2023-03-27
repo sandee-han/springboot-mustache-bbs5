@@ -1,6 +1,6 @@
 package com.mustache.bbs5.controller;
 
-import com.mustache.bbs5.domain.Article;
+import com.mustache.bbs5.domain.entity.Article;
 import com.mustache.bbs5.domain.dto.ArticleDto;
 import com.mustache.bbs5.repository.ArticleRepository;
 import lombok.extern.slf4j.Slf4j;

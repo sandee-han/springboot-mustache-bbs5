@@ -1,4 +1,4 @@
-package com.mustache.bbs5.domain;
+package com.mustache.bbs5.domain.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "visit")
+@Table(name = "t_visit")
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder

@@ -1,37 +1,27 @@
 package com.mustache.bbs5.domain.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Getter
+@ToString
 @Builder
 @AllArgsConstructor
-@NoArgsConstructor
 public class HospitalResponse {
     private Long id;
-    private String address;
-    private String name;
+    private String hospitalName;
     private Integer patientRoomCount;
-    private Integer beds;
+    private Integer totalNumberOfBeds;
     private String businessTypeName;
     private Float totalAreaSize;
-
-    public HospitalResponse(Long id, String address, String name, Integer patientRoomCount, Integer beds, String businessTypeName, Float totalAreaSize) {
-        this.id = id;
-        this.address = address;
-        this.name = name;
-        this.patientRoomCount = patientRoomCount;
-        this.beds = beds;
-        this.businessTypeName = businessTypeName;
-        this.totalAreaSize = totalAreaSize;
-    }
-
     private String businessStatusName;
 
-    public void setBusinessStatusName(String businessStatusName) {
-        this.businessStatusName = businessStatusName;
+    public HospitalResponse(Long id, String name, Integer patientRoomCount, Integer totalNumberOfBeds, String businessTypeName, Float totalAreaSize) {
+        this.id = id;
+        this.hospitalName = name;
+        this.patientRoomCount = patientRoomCount;
+        this.totalNumberOfBeds = totalNumberOfBeds;
+        this.businessTypeName = businessTypeName;
+        this.totalAreaSize = totalAreaSize;
     }
 
 }

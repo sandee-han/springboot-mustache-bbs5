@@ -1,8 +1,8 @@
 package com.mustache.bbs5.service;
 
-import com.mustache.bbs5.domain.Hospital;
-import com.mustache.bbs5.domain.User;
-import com.mustache.bbs5.domain.Visit;
+import com.mustache.bbs5.domain.entity.Hospital;
+import com.mustache.bbs5.domain.entity.User;
+import com.mustache.bbs5.domain.entity.Visit;
 import com.mustache.bbs5.domain.dto.VisitRequest;
 import com.mustache.bbs5.exception.ErrorCode;
 import com.mustache.bbs5.exception.HospitalReviewAppException;
@@ -10,7 +10,6 @@ import com.mustache.bbs5.repository.HospitalRepository;
 import com.mustache.bbs5.repository.UserRepository;
 import com.mustache.bbs5.repository.VisitRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service

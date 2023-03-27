@@ -1,6 +1,6 @@
 package com.mustache.bbs5.service;
 
-import com.mustache.bbs5.domain.User;
+import com.mustache.bbs5.domain.entity.User;
 import com.mustache.bbs5.domain.dto.UserDto;
 import com.mustache.bbs5.domain.dto.UserJoinRequest;
 import com.mustache.bbs5.exception.ErrorCode;

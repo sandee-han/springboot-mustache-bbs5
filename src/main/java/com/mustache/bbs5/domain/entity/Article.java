@@ -1,7 +1,6 @@
-package com.mustache.bbs5.domain;
+package com.mustache.bbs5.domain.entity;
 
 import com.mustache.bbs5.domain.dto.ArticleResponse;
-import com.mustache.bbs5.domain.dto.HospitalResponse;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -10,7 +9,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 
 @Entity
-@Table(name="article5")
+@Table(name="t_article")
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor

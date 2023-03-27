@@ -17,12 +17,11 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @RequiredArgsConstructor
 public class AuthenticationConfig {
 
-    // 여기 있는 UserService와 secretKey를 JwtFilter 할 때 넣어줄거다
+    // 여기 있는 UserService와 secretKey를 JwtFilter 할 때 넣어준다
     private final UserService userService;
 
     @Value("${jwt.secret}")
     private String secretKey;
-
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
@@ -31,11 +30,11 @@ public class AuthenticationConfig {
                 .csrf().disable()
                 .cors().and()
                 .authorizeRequests()
-                .antMatchers("/api/v1/users/join", "/api/v1/users/login").permitAll() // join, login은 언제나 가능
-                .antMatchers(HttpMethod.POST, "/api/v1/**").authenticated()
+                .antMatchers("api/v1/users/join", "/api/v1/users/login").permitAll() // join, login은 언제나 가능
+                .antMatchers(HttpMethod.POST,"api/v1/**").authenticated()
                 .and()
                 .sessionManagement()
-                .sessionCreationPolicy(SessionCreationPolicy.STATELESS) // jwt사용하는 경우 씀
+                .sessionCreationPolicy(SessionCreationPolicy.STATELESS) // jwt 사용하는 경우 사용
                 .and()
                 .addFilterBefore(new JwtFilter(userService, secretKey), UsernamePasswordAuthenticationFilter.class)
                 .build();

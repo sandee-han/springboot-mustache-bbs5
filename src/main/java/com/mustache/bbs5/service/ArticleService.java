@@ -1,6 +1,6 @@
 package com.mustache.bbs5.service;
 
-import com.mustache.bbs5.domain.Article;
+import com.mustache.bbs5.domain.entity.Article;
 import com.mustache.bbs5.domain.dto.ArticleAddRequest;
 import com.mustache.bbs5.domain.dto.ArticleAddResponse;
 import com.mustache.bbs5.domain.dto.ArticleResponse;
