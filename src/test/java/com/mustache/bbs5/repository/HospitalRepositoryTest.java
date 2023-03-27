@@ -1,6 +1,6 @@
 package com.mustache.bbs5.repository;
 
-import com.mustache.bbs5.domain.Hospital;
+import com.mustache.bbs5.domain.entity.Hospital;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,8 +24,8 @@ class HospitalRepositoryTest {
         Hospital hp = hospital.get();
         System.out.println(hp.getId());
         assertEquals(1, hp.getId());
-        assertEquals("효치과의원", hp.getName());
-        assertEquals("광주광역시 북구 풍향동 565번지 4호 3층", hp.getAddress());
+        assertEquals("효치과의원", hp.getHospitalName());
+        assertEquals("광주광역시 북구 풍향동 565번지 4호 3층", hp.getRoadNameAddress());
     }
 
     @Test
@@ -39,17 +39,17 @@ class HospitalRepositoryTest {
         List<Hospital> hospitals = hospitalRepository.findByBusinessTypeNameIn(inClues);
         for (var hospital :
                 hospitals) {
-            System.out.println(hospital.getName());
+            System.out.println(hospital.getHospitalName());
         }
     }
 
     @Test
     @DisplayName("광진구를 담고있느냐.")
     void findByAddressIsContaining() {
-        List<Hospital> hospitals = hospitalRepository.findByAddressIsContaining("광진구");
+        List<Hospital> hospitals = hospitalRepository.findByRoadNameAddressIsContaining("광진구");
         for (var hospital :
                 hospitals) {
-            System.out.println(hospital.getAddress());
+            System.out.println(hospital.getRoadNameAddress());
         }
     }
 
@@ -62,20 +62,20 @@ class HospitalRepositoryTest {
         inClues.add("보건진료소");
 
         List<Hospital> hospitals = hospitalRepository.findByBusinessTypeNameIn(inClues);
-        hospitals = hospitalRepository.findByAddressIsContaining("광진구");
+        hospitals = hospitalRepository.findByRoadNameAddressIsContaining("광진구");
         for (var hospital :
                 hospitals) {
-            System.out.println(hospital.getName());
+            System.out.println(hospital.getHospitalName());
         }
     }
 
     @Test
     @DisplayName("병상 수가 10개 이상, 20개 미만인 병원")
     void findByNumbersOfBedsBetween() {
-        List<Hospital> hospitals = hospitalRepository.findByBedsBetween(10, 19);
+        List<Hospital> hospitals = hospitalRepository.findByTotalNumberOfBedsBetween(10, 19);
         for (var hospital :
                 hospitals) {
-            System.out.printf("%s: %d\n", hospital.getName(), hospital.getBeds());
+            System.out.printf("%s: %d\n", hospital.getHospitalName(), hospital.getTotalNumberOfBeds());
         }
     }
 

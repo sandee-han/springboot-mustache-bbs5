@@ -7,6 +7,12 @@ import io.jsonwebtoken.SignatureAlgorithm;
 import java.util.Date;
 
 public class JwtUtil {
+    private static Claims extractClaims(String token, String key) {
+        return Jwts.parser()
+                .setSigningKey(key)
+                .parseClaimsJws(token)
+                .getBody();
+    }
     public static String getUserName(String token, String secretKey) {
         return Jwts.parser().setSigningKey(secretKey).parseClaimsJws(token)
                 .getBody().get("userName", String.class);
@@ -30,7 +36,5 @@ public class JwtUtil {
                 .setExpiration(new Date(System.currentTimeMillis() + expiredMs))
                 .signWith(SignatureAlgorithm.HS256, secretKey)
                 .compact();
-
-
     }
 }
